@@ -66,50 +66,50 @@ void Controller::setup()
   // Saved Variables
 
   // Parameters
-  ModularDevice::Parameter& bridge_parameter = modular_server_.createParameter(constants::bridge_parameter_name);
+  ModularDevice::Parameter & bridge_parameter = modular_server_.createParameter(constants::bridge_parameter_name);
   bridge_parameter.setRange(0,constants::BRIDGE_COUNT-1);
 
-  ModularDevice::Parameter& positive_parameter = modular_server_.createParameter(constants::positive_parameter_name);
+  ModularDevice::Parameter & positive_parameter = modular_server_.createParameter(constants::positive_parameter_name);
   positive_parameter.setTypeBool();
 
-  ModularDevice::Parameter& duration_parameter = modular_server_.createParameter(constants::duration_parameter_name);
+  ModularDevice::Parameter & duration_parameter = modular_server_.createParameter(constants::duration_parameter_name);
   duration_parameter.setRange(constants::duration_min,constants::duration_max);
   duration_parameter.setUnits(constants::duration_units_name);
 
-  ModularDevice::Parameter& on_duration_parameter = modular_server_.createParameter(constants::on_duration_parameter_name);
+  ModularDevice::Parameter & on_duration_parameter = modular_server_.createParameter(constants::on_duration_parameter_name);
   on_duration_parameter.setRange(constants::duration_min,constants::duration_max);
   on_duration_parameter.setUnits(constants::duration_units_name);
 
-  ModularDevice::Parameter& period_parameter = modular_server_.createParameter(constants::period_parameter_name);
+  ModularDevice::Parameter & period_parameter = modular_server_.createParameter(constants::period_parameter_name);
   period_parameter.setRange(constants::duration_min,constants::duration_max);
   period_parameter.setUnits(constants::duration_units_name);
 
-  ModularDevice::Parameter& count_parameter = modular_server_.createParameter(constants::count_parameter_name);
+  ModularDevice::Parameter & count_parameter = modular_server_.createParameter(constants::count_parameter_name);
   count_parameter.setRange(constants::duration_min,constants::duration_max);
 
-  ModularDevice::Parameter& digital_input_parameter = modular_server_.createParameter(constants::digital_input_parameter_name);
+  ModularDevice::Parameter & digital_input_parameter = modular_server_.createParameter(constants::digital_input_parameter_name);
   digital_input_parameter.setRange(0,constants::DIGITAL_INPUT_COUNT-1);
 
   // Methods
-  ModularDevice::Method& pulse_method = modular_server_.createMethod(constants::pulse_method_name);
+  ModularDevice::Method & pulse_method = modular_server_.createMethod(constants::pulse_method_name);
   pulse_method.attachCallback(callbacks::pulseCallback);
   pulse_method.addParameter(bridge_parameter);
   pulse_method.addParameter(positive_parameter);
   pulse_method.addParameter(duration_parameter);
 
-  ModularDevice::Method& add_pwm_period_on_duration_method = modular_server_.createMethod(constants::add_pwm_period_on_duration_method_name);
+  ModularDevice::Method & add_pwm_period_on_duration_method = modular_server_.createMethod(constants::add_pwm_period_on_duration_method_name);
   add_pwm_period_on_duration_method.attachCallback(callbacks::addPwmPeriodOnDurationCallback);
   add_pwm_period_on_duration_method.addParameter(bridge_parameter);
   add_pwm_period_on_duration_method.addParameter(period_parameter);
   add_pwm_period_on_duration_method.addParameter(on_duration_parameter);
   add_pwm_period_on_duration_method.addParameter(count_parameter);
 
-  ModularDevice::Method& get_digital_input_method = modular_server_.createMethod(constants::get_digital_input_method_name);
+  ModularDevice::Method & get_digital_input_method = modular_server_.createMethod(constants::get_digital_input_method_name);
   get_digital_input_method.attachCallback(callbacks::getDigitalInputCallback);
   get_digital_input_method.addParameter(digital_input_parameter);
   get_digital_input_method.setReturnTypeBool();
 
-  ModularDevice::Method& toggle_digital_output_method = modular_server_.createMethod(constants::toggle_digital_output_method_name);
+  ModularDevice::Method & toggle_digital_output_method = modular_server_.createMethod(constants::toggle_digital_output_method_name);
   toggle_digital_output_method.attachCallback(callbacks::toggleDigitalOutputCallback);
 
   // Setup Streams
@@ -142,7 +142,7 @@ void Controller::update()
   modular_server_.handleServerRequests();
 }
 
-ModularDevice::ModularServer& Controller::getModularServer()
+ModularDevice::ModularServer & Controller::getModularServer()
 {
   return modular_server_;
 }

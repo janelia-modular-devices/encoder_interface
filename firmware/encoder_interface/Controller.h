@@ -18,7 +18,7 @@ public:
   Controller();
   void setup();
   void update();
-  ModularDevice::ModularServer& getModularServer();
+  ModularDevice::ModularServer & getModularServer();
 
   void setBridgePolarity(int bridge, bool positive);
   void toggleBridgePolarity(int bridge);
