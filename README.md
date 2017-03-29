@@ -1,4 +1,4 @@
-#encoder_interface
+# encoder_interface
 
 Authors:
 
@@ -8,16 +8,16 @@ License:
 
     BSD
 
-##More Detailed Help on Installation and Usage
+## More Detailed Help on Installation and Usage
 
 [modular-devices](https://github.com/janelia-modular-devices/modular-devices)
 
-##Device Information
+## Device Information
 
 ```json
 ```
 
-##Verbose Device Information
+## Verbose Device Information
 
 ```json
 ```
