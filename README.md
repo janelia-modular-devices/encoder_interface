@@ -12,12 +12,3 @@ License:
 
 [modular-devices](https://github.com/janelia-modular-devices/modular-devices)
 
-## Device Information
-
-```json
-```
-
-## Verbose Device Information
-
-```json
-```
